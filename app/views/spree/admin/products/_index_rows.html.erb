@@ -1,1 +1,7 @@
-<td><%= product.stores.map(&:code).join(", ") unless product.stores.empty? %></td>
+<td>
+  <% if product.stores.present? %>
+    <a href="javascript:;" class="with-tip" data-placement="top" title="<%= product.stores.map(&:code).join(", ") %>">
+      <%= product.stores.count %> <%= Spree.t(:stores) %>
+    </a>
+  <% end %>
+</td>
