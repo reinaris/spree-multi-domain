@@ -1,6 +1,6 @@
-<tr>
-  <td><label><%=t("store")%></label></td>
-  <td>
-    <%= collection_select(:tracker, :store_id, Spree::Store.all, :id, :name, {}) %>
-  </td>
-</tr>
+<div class="col-md-4">
+  <div class="form-group">
+    <%= f.label :store, Spree.t(:store) %>
+    <%= collection_select(:tracker, :store_id, Spree::Store.all, :id, :name, {}, class: "form-control") %>
+  </div>
+</div>
