@@ -1,0 +1,5 @@
+<!-- insert_bottom "[data-hook='admin_product_tabs']" -->
+
+<%= content_tag :li, class: ('active' if current == 'Stores') do %>
+  <%= link_to_with_icon 'home', Spree.t(:stores), stores_admin_product_url(@product) %>
+<% end if can?(:manage, Spree::Store) %>
