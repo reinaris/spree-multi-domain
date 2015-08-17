@@ -1,7 +1,7 @@
 <td>
   <% if product.stores.present? %>
     <a href="javascript:;" class="with-tip" data-placement="top" title="<%= product.stores.map(&:code).join(", ") %>">
-      <%= product.stores.count %> <%= Spree.t(:stores) %>
+      <%= product.stores.count %>
     </a>
   <% end %>
 </td>
