@@ -2,7 +2,7 @@ Deface::Override.new(
   :virtual_path => "spree/admin/products/index",
   :name => "multi_domain_admin_products_index_headers",
   :insert_before => "[data-hook='admin_products_index_header_actions']",
-  :text => "<th><%= Spree.t(:stores) %></th>",
+  :text => "<th class='text-center'><%= Spree.t(:stores) %></th>",
   :disabled => false)
 
 Deface::Override.new(
