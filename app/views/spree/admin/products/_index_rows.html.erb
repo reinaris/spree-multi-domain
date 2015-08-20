@@ -1,7 +1,9 @@
-<td>
-  <% if product.stores.present? %>
-    <a href="javascript:;" class="with-tip" data-placement="top" title="<%= product.stores.map(&:code).join(", ") %>">
-      <%= product.stores.count %>
-    </a>
-  <% end %>
+<td class="text-center">
+  <span class="badge <%= 'badge-zero' if product.stores.count == 0 %>">
+    <% if product.stores.count > 0 %>
+      <%= link_to product.stores.count, 'javascript:;', class: 'with-tip', data: { placement: 'top' }, title: product.stores.map(&:code).join(', ') %>
+    <% else %>
+      0
+    <% end %>
+  </span>
 </td>
