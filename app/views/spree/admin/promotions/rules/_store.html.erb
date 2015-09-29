@@ -1,8 +1,10 @@
-<div class="form-group">
-  <label><%= Spree.t('store_rule.choose_stores') %></label>
-  <input type='hidden' name='<%= param_prefix %>[store_ids_string]' class='store_picker' value='<%= promotion_rule.store_ids.join(",") %>'>
+<div class="panel-body">
+  <div class="form-group no-margin-bottom">
+    <label><%= Spree.t('store_rule.choose_stores') %></label><br/>
+    <input type='hidden' name='<%= param_prefix %>[store_ids_string]' class='store_picker fullwidth-input' value='<%= promotion_rule.store_ids.join(",") %>'>
+  </div>
+  <script>
+    Spree.routes.store_search = '<%= spree.admin_stores_path(format: :json) %>';
+    $('.store_picker').storeAutocomplete();
+  </script>
 </div>
-<script>
-  Spree.routes.store_search = '<%= spree.admin_stores_path(:format => :json) %>';
-  $('.store_picker').storeAutocomplete();
-</script>
