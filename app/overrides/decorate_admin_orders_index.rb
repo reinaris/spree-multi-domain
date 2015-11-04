@@ -18,3 +18,10 @@ Deface::Override.new(
   :insert_before => "[data-hook='admin_orders_index_search_buttons']",
   :partial => "spree/admin/orders/index_search_fields",
   :disabled => false)
+
+Deface::Override.new(
+  :virtual_path => "spree/admin/orders/risky",
+  :name => "multi_domain_admin_orders_risky_search",
+  :insert_before => "[data-hook='admin_orders_index_search_buttons']",
+  :partial => "spree/admin/orders/index_search_fields",
+  :disabled => false)
